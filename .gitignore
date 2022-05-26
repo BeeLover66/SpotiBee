@@ -1,0 +1,5 @@
+# Ignore the file containing the cached Spotify API token from the last execution
+.cache
+
+# Ignore the virtual environment
+venv/
