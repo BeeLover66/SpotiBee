@@ -25,13 +25,18 @@ currently playing track.
 
 ## Installing and using
 
-This project has not been compiled into an executable yet, so for now the 
-only way to use it is to install the entire project and run spotibee.py 
-using a Python virtual environment that has installed the contents of 
-requirements.txt. A .bat file has been provided that starts execution 
-supposing you created a virtual environment named "venv" a temporary 
-solution, but I plan to figure out how to use PyInstaller in order to make
-the project easier to use.
+If you only want to use the program without modifying the source code, 
+download the latest release [here](https://github.com/BeeLover66/SpotiBee/releases). 
+You can then extract the archive wherever you prefer. To launch the 
+program, simply execute the spotibee.exe file present in the spotibee 
+directory. You may need to tell any antivirus program that the program is 
+safe in order to execute it.
+
+For now, the Spotify App used to make API calls is in development mode, 
+therefore only 25 accounts can use the program simultaneously. If you do 
+not know me personally, you should consider creating your own Spotify App 
+[here](https://developer.spotify.com/dashboard/) and change the client ID 
+in the authorization.json file.
 
 You can edit the hotkeys via the assets/json/hotkeys.json file. The hotkey
 must be in the format `"ctrl+shift+a, s"`. This would trigger when the 
@@ -43,21 +48,7 @@ You can also replace the sound effect files in the assets/sound/
 directory, as long as they have the same name and file extension (mp3) as 
 the original ones.
 
-### Instructions on setting up the project
-#### Windows
-1. Download and unzip this project
-2. Install [Python 3.10.4](https://www.python.org/downloads/release/python-3104/)
-3. Open the command prompt and navigate to the SpotiBee directory: <br>
-`cd C:\path\to\spotibee\`
-4. Install the virtualenv module: <br>
-`pip install --upgrade virtualenv`
-5. Create a new virtual environmentin the current directory: <br>
-`virtualenv venv`
-6. Activate the created virtual environment: <br>
-`.\venv\Scripts\activate`
-7. Install the required libraries to the virtual environment: <br>
-`pip install -r requirements.txt`
-8. From there, just run spotibee.bat to launch the program.
+The executable was created with pyinstaller using the spotibee.spec file.
 
 ## Contributing
 
