@@ -1,11 +1,13 @@
-# Ignore the file containing the cached Spotify API token from the last execution
+# Various cache files
+__pycache__/
 .cache
 
-# Ignore the IDE files
+# IDE files
 .idea/
 
-# Ignore the virtual environment
+# Virtual environment
 venv/
 
-# Ignore the folder containing temporary work files for pyinstaller
+# Build and distribution folders
 build/
+dist/
