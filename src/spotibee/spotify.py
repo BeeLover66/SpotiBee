@@ -1,5 +1,5 @@
 # SpotiBee: A simple program for Spotify hotkeys
-# Copyright (C) 2022  BeeLover66
+# Copyright (C) 2022-2023  BeeLover66
 #
 # See __init__.py for more information
 
@@ -72,7 +72,7 @@ def play_pause(sp):
 
 def save_unsave(sp):
     """
-    Saves to / removes from user's Your Library playlist.
+    Saves or removes currently playing track from user's Your Library playlist.
 
     If there is no current playback, play error sound and send message explaining why the request could not be
     processed.
@@ -139,7 +139,43 @@ def info(sp):
     track_name = currently_playing["item"]["name"]
     artist_name = currently_playing["item"]["artists"][0]["name"]
 
-    to_say = f"Currently playing: {track_name}, by {artist_name}."
+    to_say = f"Currently playing: {track_name}, by {artist_name}"
 
     print(to_say)
     tts(to_say)
+
+
+def shift_volume(sp, qty):
+    """
+    Shifts current playback volume by a given value.
+    This value is a percentage and can be negative to decrease the volume.
+
+    If the change would put the volume percentage under 0 or over 100, it is set to 0 and 100 respectively.
+    
+    If user does not have Spotify Premium or there is no current playback, play error sound and send message explaining
+    why the request could not be processed.
+
+    :type sp: spotipy.Spotify
+
+    :param sp: The Spotify API client to which to send the request
+    :param qty: The quantity to shift the current volume by
+    """
+    if sp.current_user()["product"] != "premium":
+        print("I can't do that because your account doesn't have Spotify Premium...")
+        play("error")
+        return
+    if sp.current_playback() is None:
+        print("I can't do that, nothing is playing!")
+        play("error")
+        return
+
+    current_volume = sp.current_playback()["device"]["volume_percent"]
+
+    new_volume = round(current_volume + qty)
+
+    if new_volume < 0:
+        new_volume = 0
+    elif new_volume > 100:
+        new_volume = 100
+
+    sp.volume(new_volume)

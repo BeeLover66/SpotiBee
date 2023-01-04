@@ -6,7 +6,7 @@ block_cipher = None
 
 a = Analysis(
     ['src\\spotibee\\spotibee.py'],
-    pathex=[],
+    pathex=['src\\spotibee\\'],
     binaries=[],
     datas=[],
     hiddenimports=['http.server'],

@@ -1,5 +1,5 @@
 # SpotiBee: A simple program for Spotify hotkeys
-# Copyright (C) 2022  BeeLover66
+# Copyright (C) 2022-2023  BeeLover66
 #
 # This program is free software: you can redistribute it and/or modify
 # it under the terms of the GNU Affero General Public License as published

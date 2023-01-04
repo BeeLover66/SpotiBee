@@ -1,5 +1,5 @@
 # SpotiBee: A simple program for Spotify hotkeys
-# Copyright (C) 2022  BeeLover66
+# Copyright (C) 2022-2023  BeeLover66
 #
 # See __init__.py for more information
 

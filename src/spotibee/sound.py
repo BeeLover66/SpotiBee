@@ -1,5 +1,5 @@
 # SpotiBee: A simple program for Spotify hotkeys
-# Copyright (C) 2022  BeeLover66
+# Copyright (C) 2022-2023  BeeLover66
 #
 # See __init__.py for more information
 
@@ -27,7 +27,7 @@ def play(sound, block=False):
         playsound(SOUND_DIR+sound+SOUND_EXT, block)
 
 
-def mute():
+def mute_effects():
     """
     Toggles the sound effects.
     """
